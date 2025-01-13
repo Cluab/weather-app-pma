@@ -1,0 +1,12 @@
+{
+  "name": "weather-app-pma",
+  "version": "1.0.0",
+  "description": "A simple weather app that allows users to input a location (city, zip code, or coordinates) and receive real-time weather information. The app retrieves data from a live weather API and displays current conditions in an intuitive and user-friendly interface. Optional features include a 5-day forecast and location-based weather updates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ebrahim Al-Yousefi",
+  "license": "MIT"
+}
