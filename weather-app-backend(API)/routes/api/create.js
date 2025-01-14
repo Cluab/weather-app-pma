@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Weather = require('./../../models/WeatherShema');
+const Weather = require('../../models/WeatherSchema');
 
 router.post('/', async (req, res) => {
   const { location, lat, lon, temperature, condition } = req.body;
