@@ -37,13 +37,13 @@ app.use(
 const path = require('path');
 
 // Serve front-end files
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Fallback for SPA routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
-// Error Handler Middleware (at the end)
+// Error Handler Middleware
 app.use(errorHandler);
 
 // Connect to MongoDB and Start Server
