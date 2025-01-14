@@ -36,6 +36,7 @@ const WeatherBox = ({ weather, onUpdate, onDelete }) => {
           <h3>{weather.location}</h3>
           <p>Temperature: {weather.temperature}°C</p>
           <p>Condition: {weather.condition}</p>
+          <p>Date: {weather.createdAt.slice(0, 10)} </p>
           <button onClick={() => setIsEditing(true)}>Update</button>
           <button onClick={handleDelete}>Delete</button>
         </div>
@@ -49,6 +50,7 @@ WeatherBox.propTypes = {
     temperature: PropTypes.number.isRequired,
     condition: PropTypes.string.isRequired,
     _id: PropTypes.string.isRequired,
+    createdAt: PropTypes.string.isRequired,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,

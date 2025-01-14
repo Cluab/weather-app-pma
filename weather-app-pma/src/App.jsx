@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AutocompleteInput from "./components/AutoCompleteInput";
-import WeatherBox from "./components/WeatherBoc";
+import WeatherBox from "./components/WeatherBox";
 
 const App = () => {
   const [selectedLocation, setSelectedLocation] = useState([]);
