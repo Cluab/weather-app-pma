@@ -13,13 +13,10 @@ const validateCoordinates = require('./middlewares/validateCoordinates');
 const errorHandler = require('./middlewares/errorHandler');
 
 // Import Routes
-const createRoute = require('./routes/api/create');
 const readRoute = require('./routes/api/read');
 const updateRoute = require('./routes/api/update');
 const deleteRoute = require('./routes/api/delete');
 const weatherCreateRoute = require('./routes/api/weatherCreate');
-const weatherRoute = require('./routes/api/weather');
-
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
@@ -28,8 +25,6 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Back-end is running!');
 });
-app.use('/api/weather', weatherRoute);
-app.use('/api/create', createRoute);
 app.use('/api/read', readRoute);
 app.use('/api/update', validateWeatherData, validateCoordinates, updateRoute);
 app.use('/api/delete', deleteRoute);
