@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://weather-app-pma.onrender.com/api';
 
 const fetchWeather = async () => {
   const url = `${BASE_URL}/read`;
