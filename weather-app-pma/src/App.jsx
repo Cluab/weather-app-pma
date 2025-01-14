@@ -6,6 +6,28 @@ const App = () => {
   const [selectedLocation, setSelectedLocation] = useState([]);
   const [weatherData, setWeatherData] = useState(null);
 
+  const createWeatherRecord = async (lat, lon) => {
+    const url = `http://localhost:5000/api/weather/create`;
+  
+    try {
+      const response = await fetch(url, {
+        method: "POST", // Use POST since it's for creating a record
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ lat, lon }), // Send lat and lon in the body
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to create weather record");
+      }
+  
+      const createdRecord = await response.json();
+      console.log("Weather record created successfully:", createdRecord)
+    } catch (error) {
+      console.error("Error creating weather record:", error.message);
+    }
+  };
   const fetchWeather = async () => {
     const url = `http://localhost:5000/api/read/`;
     try {
@@ -72,7 +94,7 @@ const App = () => {
   const handleLocationSelect = (location) => {
     console.log("Selected location:", location);
     setSelectedLocation(location);
-    fetchWeather(location.lat, location.lng);
+    createWeatherRecord(location.lat, location.lng);
   };
 
   return (
