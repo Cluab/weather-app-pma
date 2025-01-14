@@ -14,7 +14,7 @@ const createWeatherRecord = async (req, res) => {
     const apiKey = process.env.OPENWEATHER_API_KEY;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    const weatherResponse = await fetch(weatherUrl); // Using Node.js 20 native fetch
+    const weatherResponse = await fetch(weatherUrl);
     if (!weatherResponse.ok) {
       throw new Error('Failed to fetch weather data from OpenWeather API');
     }

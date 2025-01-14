@@ -36,7 +36,6 @@ const App = () => {
     try {
       await updateWeatherRecord(id, updatedData);
   
-      // Use a different name for the variable to avoid shadowing
       const updatedWeatherData = await fetchWeather(); // Reload data
       setWeatherData(updatedWeatherData);
     } catch (error) {
