@@ -5,11 +5,11 @@ import GooglePlacesAutocomplete, {
   getLatLng,
 } from "react-google-places-autocomplete";
 
-const libraries = ["places"]; // Add 'places' library for Places API
+const libraries = ["places"];
 
 const AutocompleteInput = ({ onLocationSelect }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAkbv-fe1CQonV-4ttMRuvi6r-2iNnTpQs", // Replace with your API key
+    googleMapsApiKey: import.meta.env.VITE_GOOGLEAPIKEY,
     libraries,
   });
 
@@ -24,7 +24,7 @@ const AutocompleteInput = ({ onLocationSelect }) => {
         name: place.label,
       };
 
-      onLocationSelect(location); // Pass the location to the parent component
+      onLocationSelect(location);
     } catch (error) {
       console.error("Error fetching location details:", error);
     }
