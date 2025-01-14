@@ -34,7 +34,15 @@ app.use(
   validateCoordinates,
   weatherCreateRoute
 );
+const path = require('path');
 
+// Serve front-end files
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Fallback for SPA routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 // Error Handler Middleware (at the end)
 app.use(errorHandler);
 
