@@ -9,7 +9,7 @@ const libraries = ["places"]; // Add 'places' library for Places API
 
 const AutocompleteInput = ({ onLocationSelect }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAkbv-fe1CQonV-4ttMRuvi6r-2iNnTpQs", // Replace with your API key
+    googleMapsApiKey: "", // Replace with your API key
     libraries,
   });
 
