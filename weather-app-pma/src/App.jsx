@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import AutocompleteInput from "./components/AutoCompleteInput";
+import AutocompleteInput from "./components/AutocompleteInput";
 import WeatherBox from "./components/WeatherBox";
 import { createWeatherRecord, deleteWeatherRecord, updateWeatherRecord, fetchWeather } from "./utils/api";
 
@@ -57,6 +57,7 @@ const App = () => {
   return (
     <div style={{ padding: "1rem" }}>
       <h1>Ebrahim Al-Yousefi&apos;s Weather App</h1>
+      <button><a href="https://www.linkedin.com/school/pmaccelerator/">PM Accelerator Description</a></button>
       <AutocompleteInput onLocationSelect={handleLocationSelect} />
       {weatherData.length > 0 ? (
         weatherData.map((data) => (
